@@ -13,10 +13,9 @@ gap: 10px;
 div{
 
     width: 340px;
-    border-width: 0.7px;
-    border: 0.7px solid #CDCDCD
+    /* border-width: 0.7px; */
+    border-top: 0.7px solid #CDCDCD;
 }
-
 
 
 `

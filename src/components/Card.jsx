@@ -13,7 +13,7 @@ const CardWrapper = styled.div`
   height: 326px;
   border: 1px solid #eeeeee;
   position: absolute;
-
+  border-radius: 6px;
   padding: 10px 0 10px 0;
 
   box-shadow: 0px 8px 15px 0px #1414141f,
