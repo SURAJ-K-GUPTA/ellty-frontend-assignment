@@ -95,13 +95,12 @@ const CheckBoxWrapper = styled.div`
   label span::after {
     content: "";
     position: absolute;
-    left: 6px;
-    bottom: 5px;
-    width: 8px;
-    height: 16px;
+    left: 7px;
+    bottom: 6px;
+    width: 7px;
+    height: 14px;
     border: solid rgba(227, 227, 227, 1);
-    
-    border-width: 0 1px 1px 0;
+    border-width: 0 1.2px 1.2px 0;
     transform: rotate(45deg);
     opacity: 0;
   }
@@ -120,6 +119,7 @@ const CheckBoxWrapper = styled.div`
   }
   input:checked ~ span {
   background-color: rgba(36, 105, 246, 1);
+  border: 0;
 }
 
 input:checked ~ span:hover {
