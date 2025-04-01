@@ -82,13 +82,7 @@ const CheckBoxWrapper = styled.div`
   }
 `;
 
-const CheckboxGroup = ({ label }) => {
-  const [isChecked, setIsChecked] = React.useState(true);
-
-  const toggleCheckbox = () => {
-    setIsChecked((prev) => !prev);
-  };
-
+const CheckboxGroup = ({ label, isChecked, toggleCheckbox }) => {
   return (
     <CheckboxGroupWrapper onClick={toggleCheckbox}>
       <LabelWrapper>{label}</LabelWrapper>
@@ -99,7 +93,6 @@ const CheckboxGroup = ({ label }) => {
             id="customCheck"
             checked={isChecked}
             onClick={(e) => e.stopPropagation()}
-            // onChange={(e) => e.stopPropagation()} // Prevent double toggle
           />
           <span></span>
         </label>

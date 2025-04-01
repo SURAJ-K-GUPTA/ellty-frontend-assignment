@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 import CheckboxGroup from "./CheckboxGroup";
@@ -37,13 +37,44 @@ const CheckboxGroupWrapper = styled.div`
 `;
 
 const Card = () => {
+  const [allChecked, setAllChecked] = useState(false);
+  const [checkedPages, setCheckedPages] = useState(Array(6).fill(false));
+
+  // Handle the change of individual page checkboxes
+  const handlePageChange = (index, checked) => {
+    const updatedCheckedPages = [...checkedPages];
+    updatedCheckedPages[index] = checked;
+    setCheckedPages(updatedCheckedPages);
+
+    // If all checkboxes are checked, set 'allChecked' to true
+    setAllChecked(updatedCheckedPages.every((checked) => checked));
+  };
+
+  // Handle "All pages" checkbox
+  const handleAllPagesChange = () => {
+    const newCheckedState = !allChecked;
+    setAllChecked(newCheckedState);
+    setCheckedPages(Array(6).fill(newCheckedState)); // Update all individual checkboxes
+  };
+
   return (
     <CardWrapper>
-      <CheckboxGroup label={"All pages"} />
+      <CheckboxGroup
+        label={"All pages"}
+        isChecked={allChecked}
+        toggleCheckbox={handleAllPagesChange}
+      />
       <Line />
       <CheckboxGroupWrapper>
         {Array.from({ length: 6 }, (_, index) => (
-          <CheckboxGroup key={index} label={`Page ${index + 1}`} />
+          <CheckboxGroup
+            key={index}
+            label={`Page ${index + 1}`}
+            isChecked={checkedPages[index]}
+            toggleCheckbox={(e) => {
+              handlePageChange(index, !checkedPages[index]);
+            }}
+          />
         ))}
       </CheckboxGroupWrapper>
       <Line />
