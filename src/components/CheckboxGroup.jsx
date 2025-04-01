@@ -5,11 +5,25 @@ const CheckboxGroupWrapper = styled.div`
   width: 370px;
   height: 42px;
   position: relative;
-  outline: 1px solid #9747ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px 15px 8px 22px;
+
+  &:hover label span::after {
+    opacity: 1;
+  }
+  &:active label{
+    outline: 2px solid rgba(36, 105, 246, 0.1);
+
+  }
+
+  &:active label span::after{
+    border: solid #878787;
+    border-width: 0 1px 1px 0;
+    opacity: 1;
+  }
+
 `;
 
 const LabelWrapper = styled.div`
@@ -30,7 +44,6 @@ const LabelWrapper = styled.div`
 const CheckBoxWrapper = styled.div`
   width: 35px;
   height: 35px;
-  outline: 1px solid #9747ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,9 +54,22 @@ const CheckBoxWrapper = styled.div`
     width: 23px;
     height: 23px;
     cursor: pointer;
-    border: 1px solid #bdbdbd;
+    border: 1px solid #cdcdcd;
     opacity: 0.6;
     border-radius: 6px;
+  }
+  label:active{
+    outline: 2px solid rgba(36, 105, 246, 0.1);
+
+  }
+
+  label:checked{
+    background: rgba(80, 135, 248, 1);
+  }
+
+  label:hover {
+    opacity: 1;
+    border: 1px solid #BDBDBD
   }
 
   input {
@@ -59,23 +85,43 @@ const CheckBoxWrapper = styled.div`
     width: 100%;
     display: block;
     position: absolute;
-    border: 3px solid #fff;
+    /* border: 3px solid #fff; */
     border-radius: 6px;
     cursor: pointer;
   }
+  
+
 
   label span::after {
     content: "";
     position: absolute;
-    left: 4px;
-    bottom: 3px;
+    left: 6px;
+    bottom: 5px;
     width: 8px;
     height: 16px;
-    border: solid #E3E3E3;
+    border: solid rgba(227, 227, 227, 1);
+    
     border-width: 0 1px 1px 0;
-    transform: rotate(40deg);
+    transform: rotate(45deg);
     opacity: 0;
   }
+  
+
+
+  label span:hover::after {
+    opacity: 1;
+  }
+
+
+  label span:active::after {
+    border: solid #878787;
+    border-width: 0 1px 1px 0;
+    opacity: 1;
+  }
+  input:checked ~ span {
+  background-color: rgba(80, 135, 248, 1);
+}
+
 
   input:checked ~ span::after {
     opacity: 1;
