@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+const ButtonContainer = styled.div`
+width: 370;
+height: 60;
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 10px;
+padding-left: 15px;
+gap: 10px;
+
+
+`;
+
 const ButtonWrapper = styled.button`
   display: flex;
   flex-direction: row;
@@ -8,6 +20,7 @@ const ButtonWrapper = styled.button`
   align-items: center;
   padding: 10px 20px;
   gap: 10px;
+
 
 
   width: 340px;
@@ -44,13 +57,15 @@ const Button = () => {
   // const [clicked, setClicked] = useState(false);
 
   return (
-    <ButtonWrapper
-      // clicked={clicked}
-      // onMouseDown={() => setClicked(true)}
-      // onMouseUp={() => setClicked(false)}
-    >
-      Done
-    </ButtonWrapper>
+    <ButtonContainer>
+      <ButtonWrapper
+        // clicked={clicked}
+        // onMouseDown={() => setClicked(true)}
+        // onMouseUp={() => setClicked(false)}
+      >
+        Done
+      </ButtonWrapper>
+    </ButtonContainer>
   );
 };
 
