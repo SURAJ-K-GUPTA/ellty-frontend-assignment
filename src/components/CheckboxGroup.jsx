@@ -82,17 +82,18 @@ const CheckBoxWrapper = styled.div`
   }
 `;
 
-const CheckboxGroup = ({ label, isChecked, toggleCheckbox }) => {
+const CheckboxGroup = ({ label, isChecked, toggleCheckbox, index }) => {
   return (
     <CheckboxGroupWrapper onClick={toggleCheckbox}>
       <LabelWrapper>{label}</LabelWrapper>
       <CheckBoxWrapper>
-        <label htmlFor="customCheck">
+        <label htmlFor={`customCheckbox${index}`}>
           <input
             type="checkbox"
-            id="customCheck"
+            id={`customCheckbox${index}`}
             checked={isChecked}
             onClick={(e) => e.stopPropagation()}
+            onChange={(e)=>e.stopPropagation()}
           />
           <span></span>
         </label>

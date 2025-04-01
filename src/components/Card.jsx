@@ -69,6 +69,7 @@ const Card = () => {
         {Array.from({ length: 6 }, (_, index) => (
           <CheckboxGroup
             key={index}
+            index={index}
             label={`Page ${index + 1}`}
             isChecked={checkedPages[index]}
             toggleCheckbox={(e) => {
