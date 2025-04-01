@@ -54,8 +54,8 @@ const CheckBoxWrapper = styled.div`
     width: 23px;
     height: 23px;
     cursor: pointer;
-    border: 1px solid #cdcdcd;
-    opacity: 0.6;
+    border: 1px solid rgba(205, 205, 205, 0.6);
+    /* opacity: 0.6; */
     border-radius: 6px;
   }
   label:active{
@@ -63,9 +63,9 @@ const CheckBoxWrapper = styled.div`
 
   }
 
-  label:checked{
-    background: rgba(80, 135, 248, 1);
-  }
+
+
+
 
   label:hover {
     opacity: 1;
@@ -119,8 +119,13 @@ const CheckBoxWrapper = styled.div`
     opacity: 1;
   }
   input:checked ~ span {
+  background-color: rgba(36, 105, 246, 1);
+}
+
+input:checked ~ span:hover {
   background-color: rgba(80, 135, 248, 1);
 }
+
 
 
   input:checked ~ span::after {
